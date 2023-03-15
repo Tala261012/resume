@@ -1,0 +1,117 @@
+<header>
+    <h1>{{name}}</h1>
+    <hr>
+</header>
+<main>
+    <ol>
+        {{#each users}}
+        <li>
+            <div>
+
+                <div>
+                    <h2>{{name}}</h2>
+                    {{gender}}, {{age}} <small>(id: {{id}})</small>
+                </div>
+
+                <div>
+                    <ul type="square">
+                        <h3>Friends:</h3>
+                        <hr>
+                        {{#each friends}}
+                        <li>
+                            <div>
+                                <h4>{{name}}</h4>
+                                {{gender}}, {{age}} <small>(id: {{id}})</small><br>
+                                <br>
+                                <div>
+                                    <b><i><u style="color: gray">Mutual friends:</u></i></b>
+                                    <ul type="circle">
+                                        {{#each mutual_friends}}
+                                        <li>
+                                            <b>{{name}}</b> <br>
+                                            {{gender}}, {{age}} <small>(id: {{id}})</small>
+                                            <div>
+                                                {{#if mutual_friends}}
+                                                <b><i><u style="color: gray">Mutual riends:</u></i></b>
+                                                <ul type="circle">
+                                                    {{#each mutual_friends}}
+                                                    <li>
+                                                        <b>{{name}}</b> <br>
+                                                        {{gender}}, {{age}} <small>(id: {{id}})</small>
+                                                    </li>
+                                                    {{/each}}
+                                                </ul>
+                                                {{/if}}
+                                            </div>
+                                        </li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <div>
+                                    <b><i><u style="color: gray">Groups:</u></i></b><br>
+                                    <ul type="circle">
+                                        {{#each groups}}
+                                        <li>
+                                            <b>{{name}}</b> <br>
+                                            <i> {{description}} </i> <br>
+                                            <small>id: {{id}}</small>
+                                            <div>
+                                                <h4>Members:</h4>
+                                                <ul type="disc">
+                                                    {{#each members}}
+                                                    <li>
+                                                        <b>{{name}}</b> <br>
+                                                        {{gender}}, {{age}} <small>(id: {{id}})</small>
+                                                    </li>
+                                                    {{/each}}
+                                                </ul>
+                                                <hr>
+                                            </div>
+                                        </li>
+                                        {{/each}}
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ul>
+
+
+
+                    {{!-- groups = friends----------------------------------- --}}
+                    {{#if groups}}
+                    <ul>
+                        <h3>Groups:</h3>
+                        <hr>
+                        <div>
+                            <ul type="circle">
+                                {{#each groups}}
+                                <li>
+                                    <b>{{name}}</b> <br>
+                                    <i> {{description}} </i> <br>
+                                    <small>id: {{id}}</small>
+                                    <div>
+                                        <h4>Members:</h4>
+                                        <ul type="disc">
+                                            {{#each members}}
+                                            <li>
+                                                <b>{{name}}</b> <br>
+                                                {{gender}}, {{age}} <small>(id: {{id}})</small>
+                                            </li>
+                                            {{/each}}
+                                        </ul>
+                                        <hr>
+                                    </div>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </ul>
+                    {{/if}}
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </ol>
+</main>
