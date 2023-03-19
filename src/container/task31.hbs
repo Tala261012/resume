@@ -161,12 +161,15 @@
 
         <hr>
 
-        <section class="row">
-            <div class="display-2">Display-2</div>
+        <section class="row gy-3">
+            {{#with proposition}}
+            <div class="display-2">
+                Display-2
+            </div>
 
             <section class="col-8">
                 <div class="row g-4">
-                    {{#each proposition}}
+                    {{#each card}}
                     <div class="col-6">
                         <div class="card text-bg-warning">
                             <div class="card-header">{{header}}</div>
@@ -175,11 +178,11 @@
                                 <p>{{description}}</p>
                             </div>
                         </div>
-
                     </div>
                     {{/each}}
                 </div>
             </section>
+            {{/with}}
         </section>
 
         <hr>
