@@ -1,0 +1,256 @@
+<header>
+    <h1>{{make}} {{model}}</h1>
+    <h2 style="color:rgb(5, 115, 204)"><em>{{year}}, {{color}}</em></h2>
+    <hr>
+    <br>
+</header>
+<main>
+    <section>
+        {{#with features}}
+        {{> title data='Features' big=true}}
+        <hr>
+        <div>
+            <div>
+                <br>
+                {{> title data='Interior'}}
+                <div>
+                    {{#with interior}}
+                    <ul type="square">
+                        <li>
+                            <div>
+                                <h4 style="color:rgb(5, 115, 204)"><i> Seats:</i></h4>
+                                {{#with seats}}
+                                <ul type="circle">
+                                    <li><i> material:</i> <b>{{material}}</b></li>
+                                    <li><i>color: </i><b>{{color}}</b></li>
+                                    {{#if heated}}
+                                    <li><b>heated</b></li>
+                                    {{/if}}
+                                    {{#if ventilated}}
+                                    <li><b>ventilated</b></li>
+                                    {{/if}}
+                                </ul>
+                                {{/with}}
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h4 style="color:rgb(5, 115, 204)"><i> Dashboard:</i></h4>
+                                {{#with dashboard}}
+                                <ul type="circle">
+                                    <li><i> material:</i> <b>{{material}}</b></li>
+                                    <li><i>color: </i><b>{{color}}</b></li>
+                                    <li><i><u> display: </u></i><br>
+                                        {{#with display}}
+                                        <div>
+                                            <ul>
+                                                <li><i>type:</i> <b>{{type}}</b></li>
+                                                <li><i>size:</i> <b>{{size}}</b></li>
+                                                <li><i>resolution:</i> <b>{{resolution}}</b></li>
+                                                {{#if touchscreen}}
+                                                <li><b>touchscreen</b></li>
+                                                {{/if}}
+                                            </ul>
+                                        </div>
+                                        {{/with}}
+                                    </li>
+                                </ul>
+                                {{/with}}
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h4 style="color:rgb(5, 115, 204)"><i>Audio:</i></h4>
+                                {{#with audio}}
+                                <ul type="circle">
+                                    <li><i> system:</i> <b>{{system}}</b></li>
+                                    <li><i>speakers: </i><b>{{speakers}}</b></li>
+                                    {{#if subwoofer}}
+                                    <li><b>subwoofer</b></li>
+                                    {{/if}}
+                                    {{#if bluetooth}}
+                                    <li><b>bluetooth</b></li>
+                                    {{/if}}
+                                    {{#if USB}}
+                                    <li><b>USB</b></li>
+                                    {{/if}}
+                                </ul>
+                                {{/with}}
+                            </div>
+                        </li>
+
+                    </ul>
+                    {{/with}}
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div>
+                {{> title data='Exterior'}}
+                <div>
+                    {{#with exterior}}
+                    <ul type="square">
+                        <li>
+                            <div>
+                                <h4 style="color:rgb(5, 115, 204)"><i> Wheels:</i></h4>
+                                {{#with wheels}}
+                                <ul type="circle">
+                                    <li><i> size:</i> <b>{{size}}</b></li>
+                                    <li><i>type: </i><b>{{type}}</b></li>
+                                    <li><i>color: </i><b>{{color}}</b></li>
+                                </ul>
+                                {{/with}}
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h4 style="color:rgb(5, 115, 204)"><i> Headlights:</i></h4>
+                                {{#with headlights}}
+                                <ul type="circle">
+                                    <li><i> type:</i> <b>{{type}}</b></li>
+                                    <li><i>brightness: </i><b>{{brightness}}</b></li>
+                                    {{#if automatic}}
+                                    <li><b>automatic</b></li>
+                                    {{/if}}
+                                </ul>
+                                {{/with}}
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h4 style="color:rgb(5, 115, 204)"><i> Sunroof:</i></h4>
+                                {{#with sunroof}}
+                                <ul type="circle">
+                                    <li><i> type:</i> <b>{{type}}</b></li>
+                                    <li><i>size: </i><b>{{size}}</b></li>
+                                    {{#if automatic}}
+                                    <li><b>automatic</b></li>
+                                    {{/if}}
+                                </ul>
+                                {{/with}}
+                            </div>
+                        </li>
+
+                    </ul>
+                    {{/with}}
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div>
+                {{> title data='Safety'}}
+                <div>
+                    {{#with safety}}
+                    <ul type="square">
+                        <li>
+                            <div>
+                                <h4 style="color:rgb(5, 115, 204)"><i> Airbags:</i></h4>
+                                {{#with airbags}}
+                                <ul type="circle">
+                                    <li><i> front:</i> <b>{{front}}</b></li>
+                                    <li><i>side: </i><b>{{side}}</b></li>
+                                    <li><i>knee: </i><b>{{knee}}</b></li>
+                                    <li><i>rear: </i><b>{{rear}}</b></li>
+                                </ul>
+                                {{/with}}
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h4 style="color:rgb(5, 115, 204)"><i> Assistance:</i></h4>
+                                {{#with assistance}}
+                                <ul type="circle">
+                                    {{#if blind_spot_monitoring}}
+                                    <li><b>blind spot monitoring</b></li>
+                                    {{/if}}
+                                    {{#if rear_cross_traffic_alert}}
+                                    <li><b>rear cross traffic alert</b></li>
+                                    {{/if}}
+                                    {{#if lane_departure_warning}}
+                                    <li><b>lane departure warning</b></li>
+                                    {{/if}}
+                                    {{#if adaptive_cruise_control}}
+                                    <li><b>adaptive cruise control</b></li>
+                                    {{/if}}
+                                    {{#if collision_warning}}
+                                    <li><b>collision warning</b></li>
+                                    {{/if}}
+                                </ul>
+                                {{/with}}
+                            </div>
+                        </li>
+
+
+                    </ul>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </section>
+    <section>
+        {{> title data='Engine' big=true}}
+        <hr>
+        {{#with engine}}
+        <div>
+            <ul>
+                <li><i> type:</i> <b>{{type}}</b></li>
+                <li><i> displacement:</i> <b>{{displacement}}</b></li>
+                <li><i> horsepower:</i> <b>{{horsepower}}</b></li>
+                <li><i> torque:</i> <b>{{torque}}</b></li>
+                <li>
+                    <div>
+                        <i><u> transmission:</u></i>
+                        {{#with transmission}}
+                        <ul type="circle">
+                            <li><i> type:</i> <b>{{type}}</b></li>
+                            <li><i> gears:</i> <b>{{gears}}</b></li>
+                        </ul>
+                        {{/with}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+        {{/with}}
+    </section>
+    <section>
+        {{> title data='Fuel economy' big=true}}
+        <hr>
+        {{#with fuel_economy}}
+        <div>
+            <ul>
+                <li><i> city:</i> <b>{{city}}</b></li>
+                <li><i> highway:</i> <b>{{highway}}</b></li>
+                <li><i> combined:</i> <b>{{combined}}</b></li>
+            </ul>
+        </div>
+        {{/with}}
+    </section>
+    <section>
+        {{> title data='Price' big=true}}
+        <hr>
+        {{#with price}}
+        <div>
+            <ul>
+                <li><i> base:</i> <b>{{base}}</b></li>
+                <li><i> destination:</i> <b>{{destination}}</b></li>
+                <li>
+                    <div>
+                        <i><u> options:</u></i>
+                        {{#with options}}
+                        <ul type="circle">
+                            <li><i> navigation:</i> <b>{{navigation}}</b></li>
+                            <li><i> moonroof:</i> <b>{{moonroof}}</b></li>
+                            <li><i> premium_paint:</i> <b>{{premium_paint}}</b></li>
+                        </ul>
+                        {{/with}}
+                    </div>
+                </li>
+                <li style="color:rgb(5, 115, 204)"><i> total:</i> <b>{{total}}</b></li>
+            </ul>
+            <hr>
+        </div>
+        {{/with}}
+    </section>
+
+</main>
