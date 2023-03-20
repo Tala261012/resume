@@ -1,0 +1,26 @@
+<div>
+    <ul>
+        {{#each list}}
+        <li>
+            <span>{{name}} - {{@index}}</span>
+            <p>{{@key}}</p>
+        </li>
+        {{/each}}
+    </ul>
+    <hr>
+    <ul>
+        {{#each user}}
+        <li>
+            {{this}}
+        </li>
+        {{/each}}
+    </ul>
+    <hr>
+    <ul>
+        {{#each user2}}
+        <li>
+            {{@key}} - {{value}} {{text}}
+        </li>
+        {{/each}}
+    </ul>
+</div>

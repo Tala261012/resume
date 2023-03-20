@@ -746,7 +746,7 @@ router.get('/task22', function (req, res) {
         },
       },
     },
- })
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -1071,7 +1071,7 @@ router.get('/mac', function (req, res) {
         {
           name: 'USB-C to USB Adapter',
           price: 19.99,
-          },
+        },
       ],
     },
   })
@@ -1528,16 +1528,16 @@ router.get('/task31', function (req, res) {
 })
 
 // ================================================================
-    
+
 // ================================================================
- 
+
 router.get('/shophome', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shophome', {
     layout: 'shop',
-      
+
     navigation: {
       links: [
         {
@@ -1877,6 +1877,62 @@ router.get('/bootstrap3', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('bootstrap3', {
     layout: 'bootstrap',
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/bootstrap4', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('bootstrap4', {
+    layout: 'bootstrap',
+
+    list: [
+      {
+        name: 'First button',
+      },
+      {
+        name: 'Secondary button',
+      },
+      {
+        name: 'Error button',
+      },
+      {
+        name: 'Last button',
+      },
+    ],
+
+    user: {
+      name: 'Ivan',
+      role: 'Admin',
+      isConfirm: true,
+      age: 32,
+    },
+
+    user2: {
+      name: {
+        value: 'Ivan',
+        text: 'Ivanoff',
+      },
+      role: {
+        text: 'Admin',
+      },
+
+      isConfirm: {
+        value: true,
+      },
+      age: {
+        value: 32,
+      },
+    },
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
