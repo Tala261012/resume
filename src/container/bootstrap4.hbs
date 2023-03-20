@@ -11,7 +11,7 @@
     <ul>
         {{#each user}}
         <li>
-            {{this}}
+            {{this}} {{#if @first}} First! {{/if}} {{#if @last}} Last! {{/if}}
         </li>
         {{/each}}
     </ul>
@@ -20,7 +20,7 @@
         {{#each user2}}
         <li>
             {{@key}} - {{value}} {{text}}
-        </li>
+        </li>git
         {{/each}}
     </ul>
 </div>
