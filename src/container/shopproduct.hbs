@@ -1,30 +1,5 @@
-<main class="row gy-4">
-    <section>
-        <ol class="breadcrumb">
-            {{#each breadcrumb}}
-            {{#if @last}}
-            <li class="breadcrumb-item active">
-                {{name}}
-            </li>
-            {{else}}
-            <li class="breadcrumb-item">
-                <a href="{{url}}">{{name}}</a>
-            </li>
-            {{/if}}
-            {{/each}}
-        </ol>
-    </section>
-
-    {{!-- Другая реализация breadcrumb
-    <section>
-        <ol class="breadcrumb">
-            {{#each breadcrumb}}
-            <li class="breadcrumb-item">
-                <a href="{{url}}" {{#if @last}} class="nav-link disabled" {{/if}}>{{name}}</a>
-            </li>
-            {{/each}}
-        </ol>
-    </section> --}}
+<main>
+    {{> breadcrumb}}
 
     <section>
         {{#with productData}}
