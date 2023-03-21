@@ -1,0 +1,179 @@
+<main class="row gy-4">
+    <section>
+        <ol class="breadcrumb">
+            {{#each breadcrumb}}
+            {{#if @last}}
+            <li class="breadcrumb-item active">
+                {{name}}
+            </li>
+            {{else}}
+            <li class="breadcrumb-item">
+                <a href="{{url}}">{{name}}</a>
+            </li>
+            {{/if}}
+            {{/each}}
+        </ol>
+    </section>
+
+    {{!-- Другая реализация breadcrumb
+    <section>
+        <ol class="breadcrumb">
+            {{#each breadcrumb}}
+            <li class="breadcrumb-item">
+                <a href="{{url}}" {{#if @last}} class="nav-link disabled" {{/if}}>{{name}}</a>
+            </li>
+            {{/each}}
+        </ol>
+    </section> --}}
+
+    <section>
+        {{#with productData}}
+        <div class="row">
+
+            <div class="col-7">
+                <div class="row">
+                    <div class="col-11">
+
+                        <div class="card mb-5">
+                            <img class="card-img-top" src="{{img}}" alt="Product photo">
+                        </div>
+
+                        <div class="card">
+                            {{#with info}}
+                            <div class="card-body">
+                                <div class="card-title"><b>{{title}}</b></div>
+                                <div>
+                                    {{about}}
+                                </div>
+                                <div class="display-6 my-3">
+                                    {{price}}
+                                </div>
+                                <div>
+                                    {{#each category}}
+
+                                    {{#if isHot}}
+                                    <span class="badge text-bg-warning text-light rounded-pill">{{name}}!</span>
+                                    {{/if}}
+                                    {{#if isNew}}
+                                    <span class="badge text-bg-primary text-light rounded-pill">{{name}}!</span>
+                                    {{/if}}
+                                    {{#if isBonus}}
+                                    <span class="badge text-bg-info text-light rounded-pill">{{name}}!</span>
+                                    {{/if}}
+
+                                    {{/each}}
+                                </div>
+                            </div>
+                            {{/with}}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-5">
+
+                {{!-- Таблица --}}
+                <div class="mb-4">
+                    {{#with item}}
+                    <div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    {{#each head}}
+                                    <th>
+                                        {{this}}
+                                    </th>
+                                    {{/each}}
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {{#each body}}
+                                <tr>
+                                    {{#each this}}
+                                    <td>
+                                        {{this}}
+                                    </td>
+                                    {{/each}}
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                    {{/with}}
+                </div>
+
+                {{!-- Параметры --}}
+                <div class="card my-5">
+                    {{#with param}}
+                    <div class="card-header">{{title}}</div>
+                    <ul class="list-group list-group-flush">
+                        {{#each list}}
+                        <li class="list-group-item">{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    {{/with}}
+                </div>
+
+                {{!-- Alert --}}
+                {{#with alert}}
+                {{#if isError}}
+                <div class="alert alert-danger">
+                    {{text}}
+                </div>
+                {{/if}}
+                {{/with}}
+
+            </div>
+
+        </div>
+
+        {{!-- кнопки --}}
+        <div class="my-5">
+            <div class="card">
+                <div class="card-body">
+                    {{#each actionList}}
+
+                    {{#if isWarning}}
+                    <button class="btn btn-warning ms-1 me-3">{{name}}</button>
+                    {{/if}}
+                    {{#if isError}}
+                    <button class="btn btn-outline-danger ms-1 me-3">{{name}}</button>
+                    {{/if}}
+                    {{#if isSuccess}}
+                    <button class="btn btn-success ms-1 me-3">{{name}}</button>
+                    {{/if}}
+                    {{#if isGood}}
+                    <button class="btn btn-outline-success ms-1 me-3">{{name}}</button>
+                    {{/if}}
+
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        {{/with}}
+    </section>
+
+    <hr class="my-5">
+
+    <section>
+        {{#with goodsOtherBlock}}
+        <div class="display-5 text-center mb-4">{{title}}</div>
+
+        <div class="row">
+            {{#each cards}}
+            {{> shopcard}}
+            {{/each}}
+        </div>
+
+        {{/with}}
+    </section>
+
+    <hr class="my-5">
+
+    {{> shopaction}}
+
+</main>
