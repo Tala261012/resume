@@ -1,0 +1,30 @@
+<div class="row"> {{!-- --purchaseItem-- --}}
+
+    <div class="col-4">
+        <div class="mb-2"> {{number}}</div>
+        <div><b>{{status}}</b></div>
+    </div>
+
+    <div class="col-2">
+        {{#with amount}}
+        <div class="mb-2">{{title}}</div>
+        <h5>{{value}}</h5>
+        {{/with}}
+    </div>
+
+    <div class="col-4">
+        {{#each images}}
+        <img class="me-2" width="70px" height="70px" src="{{this}}" alt="photo">
+        {{/each}}
+    </div>
+
+    <div class="col-2 py-3">
+        {{#with button}}
+        <a href="{{link}}" {{#if isPrimary}} class="btn btn-primary" {{else}} class="btn btn-secondary"
+            {{/if}}>{{text}}</a>
+        {{/with}}
+    </div>
+
+    <hr class="my-3">
+
+</div>
