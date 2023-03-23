@@ -1,0 +1,38 @@
+<div class="card col-12 p-3"> {{!-- card general border --}}
+
+    <div class="row">
+        <div class="col-2"> {{!-- img --}}
+            <div class="card">
+                <img src="{{image}}" alt="photo" class="cart-img-top">
+            </div>
+        </div>
+
+
+        <div class="col-4"> {{!-- about --}}
+            <h5>{{name}}</h5>
+            <p>{{description}}</p>
+        </div>
+
+        <div class="col-2 pt-4 ps-3"> {{!-- price --}}
+            {{#with price}}
+            <div class="mb-2">{{title}}</div>
+            <h5>{{value}}</h5>
+            {{/with}}
+        </div>
+
+        <div class="col-2 p-5"> {{!-- amount --}}
+            {{amount}}
+        </div>
+
+        <div class="col-2"> {{!-- buttons --}}
+            {{#each buttons}}
+            <div>
+                <button {{#if isPrimary}} class="btn btn-primary mt-1 mb-3" {{/if}} {{#if
+                    isDanger}}class="btn btn-outline-danger mt-1 mb-2" {{/if}}>
+                    {{text}} </button>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+</div>

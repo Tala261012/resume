@@ -1,0 +1,98 @@
+<main>
+
+    <section>
+        {{#with header}}
+        <div class="row">
+            <div class="col-9">
+                <h1 class="mb-0">{{title}}</h1>
+            </div>
+
+            <div class="col-3">
+                {{#with button}}
+                <a href="{{link}}" class="btn btn-outline-secondary">{{text}}</a>
+                {{/with}}
+            </div>
+        </div>
+        {{/with}}
+    </section>
+
+    <hr class="my-5">
+
+    <section>
+        <div class="row gy-4">
+            {{#each goodsBlock}}
+
+            {{> cartGoodsItem}}
+
+            {{/each}}
+        </div>
+    </section>
+
+    <hr class="my-5">
+
+    <section>
+        {{#with total}}
+        <div class="row">
+            <div class="col-8">
+                <h2 class="mb-3">{{title}}</h2>
+                <div class="display-6">
+                    {{amount}}
+                </div>
+                <div>
+                    {{delivery}}
+                </div>
+            </div>
+
+            <div class="col-4"> {{!-- buttons --}}
+                {{#each buttons}}
+                <div>
+                    <a href="{{link}}" {{#if isSuccess}} class="btn btn-success mt-1 mb-3" {{/if}} {{#if
+                        isOutline}}class="btn btn-outline-success mt-1 mb-2" {{/if}}>
+                        {{text}} </a>
+                </div>
+                {{/each}}
+
+            </div>
+        </div>
+        {{/with}}
+    </section>
+
+    <hr class="my-5">
+
+    <section>
+        {{#with goodsOtherBlock}}
+        <div class="display-5 text-center mb-4">{{title}}</div>
+
+        <div class="row">
+            {{#each cards}}
+            {{> shopcard}}
+            {{/each}}
+        </div>
+
+        {{/with}}
+    </section>
+
+    <hr class="my-5">
+
+    <section>
+        {{#with subscribe}}
+        <div class="card text-bg-dark p-3">
+
+            <div class="row">
+                <div class="col-7">
+                    <h2 class="mt-1">{{header}}</h2>
+                    <p class="mb-0">{{description}}</p>
+                </div>
+
+                <div class="col-5 p-4">
+                    {{#each buttons}}
+                    <a href="{{link}}" type="{{type}}" class="btn btn-primary ms-2">{{text}}</a>
+                    {{/each}}
+                </div>
+            </div>
+
+        </div>
+        {{/with}}
+    </section>
+
+</main>

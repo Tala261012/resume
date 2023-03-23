@@ -1,5 +1,6 @@
 <main>
     <div class="row g-5">
+        {{!-- -----------------------------------------Инпуты----------------------------------------------- --}}
 
         <div>
             <label class="form-label">Email address</label>
@@ -144,8 +145,11 @@
 
         <br>
         <br>
-        <div>
-            <label class="form-label">Icon test</label>
+        {{!-- -------------------Иконка рядом с инпутом------------------------ --}}
+        <div class="input-group">
+            <span class="input-group-text">
+                <img src="/svg/desktop.svg" width="20px" alt="">
+            </span>
             <input type="text" class="form-control">
             <div class="form-text text-danger"> Error. You need to set correct words!</div>
         </div>
