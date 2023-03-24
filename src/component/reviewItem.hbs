@@ -1,0 +1,86 @@
+{{#each reviewList}}
+
+<div class="card mb-5">
+    <div class="card-body">
+        <div class="card mb-3">
+            {{#with title}}
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-8">
+                        <h5>{{userName}}</h5>
+                        <div>{{caption}}</div>
+                    </div>
+                    <div class="col-4 text-end p-3">
+                        {{date}}
+                    </div>
+                </div>
+            </div>
+            {{/with}}
+
+            <div class="card-body">
+                {{#with reviewBody}}
+
+                <div class="mb-3">
+                    {{#with seller}}
+                    {{title}}: {{value}}
+                    {{/with}}
+                </div>
+
+                <div class="mb-3">
+                    {{#each text}}
+                    {{this}}
+                    {{/each}}
+                </div>
+
+                <div class="mb-3">
+                    {{#with advantages}}
+                    <div><b>{{title}}:</b></div>
+                    <div>{{text}}</div>
+                    {{/with}}
+                </div>
+
+                <div class="mb-3">
+                    {{#with disadvantages}}
+                    <div><b>{{title}}:</b></div>
+                    <div>{{text}}</div>
+                    {{/with}}
+                </div>
+
+                <div>
+                    {{#each images}}
+                    <img class="m-1" src="{{this}}" alt="photo" width="100px">
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <div>
+            {{#each coments}}
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-11">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-8">
+                                    <h5>{{userName}}</h5>
+                                </div>
+                                <div class="col-4 text-end p-1">
+                                    {{date}}
+                                </div>
+                            </div>
+                            {{text}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{/each}}{{!-- comments --}}
+        </div>
+
+        {{/with}}{{!-- reviewBody --}}
+    </div>
+
+</div>
+
+{{/each}} {{!-- reviewList --}}
