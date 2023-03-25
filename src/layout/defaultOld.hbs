@@ -42,15 +42,13 @@
 	</header>
 	{{/with}}
 
-	<div class="row">
-		<div class="col-3">
-			{{> nav2}}
-		</div>
-		<div class="col-9 ps-5">
-			{{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу --}}
-			{{{body}}}
-		</div>
+	<div class="mb-5">
+		{{> nav}}
 	</div>
+
+	{{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу --}}
+	{{{body}}}
+
 
 	{{> footer social=footer.social
 	firstname=header.name.firstname
